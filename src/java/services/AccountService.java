@@ -18,4 +18,11 @@ public class AccountService {
         
         return null;
     }
+    
+    public boolean isAdmin(String email) {
+        UserDB userDB = new UserDB();
+        User user = userDB.get(email);
+        
+        return user.getRole().getRoleId() == 1;
+    }
 }
